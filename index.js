@@ -1,11 +1,11 @@
 var readlineSync = require("readline-sync")
 var userName = readlineSync.question("enter your name ");
 var score = 0;
-console.log("welcome!!!! " + userName);
+console.log("welcome!!! " + userName);
 console.log("lets see how much you know me");
 function play(question, answer) {
   var userAnswer = readlineSync.question(question);
-  if (userAnswer == answer) {
+  if (userAnswer.toUpperCase() === answer.toUpperCase()) {
     console.log("woah!! didnt expect you knew that");
     score += 1;
   } else {
@@ -13,7 +13,7 @@ function play(question, answer) {
     score -= 1;
   }
 }
-console.log("Answer with all LOWER cases ");
+
 console.log("lets see how much you get out of 10 ")
 var questions = [
   {
